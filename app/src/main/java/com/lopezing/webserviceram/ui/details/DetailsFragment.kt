@@ -32,7 +32,7 @@ class DetailsFragment : Fragment() {
             personTitleTextView.text=person.name
             specieDateTextView.text=person.species
             genderAverageTextView.text=person.gender
-            summaryTextView.text=person.name+" life in "+person.location?.name+", is origin the "+person.origin?.name+" and created in "+person.created
+            summaryTextView.text="He is "+person.name+", he lives in "+person.location?.name+" from "+person.origin?.name+" and was created in "+person.created
             Picasso.get().load(person.image).into(posterImageView)
         }
     }
