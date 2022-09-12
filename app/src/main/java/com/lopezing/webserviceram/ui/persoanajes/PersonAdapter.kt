@@ -1,4 +1,4 @@
-package com.lopezing.webserviceram.ui.home
+package com.lopezing.webserviceram.ui.persoanajes
 
 import android.view.LayoutInflater
 import android.view.View

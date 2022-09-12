@@ -11,4 +11,9 @@
     <string name="location_label">nn</string>
     <string name="specie_title" />
     <string name="pageAdd">Añadir pagina</string>
+    <string name="imagenfavorite">ImagenFavorite</string>
+    <string name="title_favorite">Favorite</string>
+    <string name="accept">Aceptar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="title_details">Details</string>
 </resources>

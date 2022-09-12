@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
         navController.addOnDestinationChangedListener { _, destination, _ ->
-            if (destination.id == R.id.navigation_home || destination.id == R.id.navigation_notifications|| destination.id == R.id.navigation_dashboard ){
+            if (destination.id == R.id.navigation_home ||  destination.id == R.id.navigation_favorite ){
                 navView.visibility = View.VISIBLE
                 supportActionBar?.show()
             }
@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
+                R.id.navigation_home, R.id.navigation_favorite
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

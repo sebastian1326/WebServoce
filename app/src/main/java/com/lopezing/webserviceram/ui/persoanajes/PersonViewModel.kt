@@ -1,4 +1,4 @@
-package com.lopezing.webserviceram.ui.home
+package com.lopezing.webserviceram.ui.persoanajes
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -9,7 +9,7 @@ import com.lopezing.webserviceram.server.model.Person
 import com.lopezing.webserviceram.server.model.PersonsList
 import kotlinx.coroutines.launch
 
-class HomeViewModel : ViewModel() {
+class PersonViewModel : ViewModel() {
     private val rickAndMortyRepository=RickAndMortyRepository()
     private val _personObserve:MutableLiveData<ArrayList<Person>> =MutableLiveData()
     val personObserve:LiveData<ArrayList<Person>> =_personObserve

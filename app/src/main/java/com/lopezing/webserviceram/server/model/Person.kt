@@ -10,19 +10,19 @@ data class Person(
     @SerializedName("episode")
     val episode: List<String>? = null,
     @SerializedName("gender")
-    val gender: String? = null,
+    var gender: String? = null,
     @SerializedName("id")
     val id: Int? = null,
     @SerializedName("image")
-    val image: String? = null,
+    var image: String? = null,
     @SerializedName("location")
-    val location: Location? = null,
+    var location: Location? = null,
     @SerializedName("name")
-    val name: String? = null,
+    var name: String? = null,
     @SerializedName("origin")
     val origin: Origin? = null,
     @SerializedName("species")
-    val species: String? = null,
+    var species: String? = null,
     @SerializedName("status")
     val status: String? = null,
     @SerializedName("type")

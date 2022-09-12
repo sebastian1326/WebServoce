@@ -1,4 +1,4 @@
-package com.lopezing.webserviceram.ui.home
+package com.lopezing.webserviceram.ui.persoanajes
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,9 +11,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.lopezing.webserviceram.databinding.FragmentHomeBinding
 import com.lopezing.webserviceram.server.model.Person
 
-class HomeFragment : Fragment() {
+class PersonFragment : Fragment() {
 
-    private lateinit var homeViewModel : HomeViewModel
+    private lateinit var personViewModel : PersonViewModel
     private lateinit var homeBinding: FragmentHomeBinding
     private var personList: ArrayList<Person> = ArrayList()
     private lateinit var personAdapter:PersonAdapter
@@ -23,32 +23,28 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
-
+        personViewModel = ViewModelProvider(this).get(PersonViewModel::class.java)
         homeBinding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = homeBinding.root
-
-
-        return root
+        return homeBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         personAdapter =PersonAdapter(personList, onItemClicked = { onPersonItemClicked(it)})
-        homeViewModel.personObserve.observe(viewLifecycleOwner){ result ->
+        personViewModel.personObserve.observe(viewLifecycleOwner){ result ->
             onMoviesLoadedSubscribe(result)
         }
         homeBinding.moviesRecyclerView.apply {
-            layoutManager=LinearLayoutManager(this@HomeFragment.requireContext())
+            layoutManager=LinearLayoutManager(this@PersonFragment.requireContext())
             adapter=personAdapter
             setHasFixedSize(false)
         }
-        homeViewModel.getRaM()
+        personViewModel.getRaM()
 
     }
 
     private fun onPersonItemClicked(person: Person) {
-        findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToDetailsFragment(person))
+        findNavController().navigate(PersonFragmentDirections.actionNavigationHomeToDetailsFragment(person))
     }
     private fun onMoviesLoadedSubscribe(personsList: ArrayList<Person>?) {
         personsList?.let { personsList->

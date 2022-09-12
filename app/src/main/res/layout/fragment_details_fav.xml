@@ -81,7 +81,7 @@
         app:layout_constraintBottom_toTopOf="@+id/gender_average_label_text_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/poster_image_view"
-        app:srcCompat="@drawable/ic_favorite_no" />
+        app:srcCompat="@drawable/ic_favorite_good" />
 
     <TextView
         android:id="@+id/summary_text_view"
